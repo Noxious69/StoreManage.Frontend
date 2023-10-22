@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@font-face {
+    font-family: samim;
+    src: url(./assets/Samim.woff);
+  }
+  @font-face {
+    font-family: awesome;
+    src: url(./assets/fontawesome-webfont.woff2);
+  }
+  @font-face {
+    font-family: rtui;
+    src: url(./assets/rtui.woff2);
+  }
+
+  .fontpack{
+    font-family: samim, sans-serif, awesome, rtui -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  }

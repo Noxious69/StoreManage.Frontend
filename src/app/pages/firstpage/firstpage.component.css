@@ -1,0 +1,35 @@
+
+:host {
+    font-size: 14px;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+
+#screen{
+    background-color: rgba(224, 224, 224, 0.514);
+    min-height: 100vh;
+
+}
+#content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+
+}
+
+.anime{
+   text-decoration: none;
+    height: 10vh;
+    width: 30vw;
+}
+  .anime button .anime,button:not(.highlight-card):hover  {
+    transform: translateY(-5px);
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+    transition: all 0.3s ease-in-out;
+  }
+
+  
