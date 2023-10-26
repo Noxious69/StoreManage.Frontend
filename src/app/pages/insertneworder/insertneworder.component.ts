@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component,  } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-insertneworder',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./insertneworder.component.css']
 })
 export class InsertneworderComponent {
-
+  dateValue = new FormControl();
 }

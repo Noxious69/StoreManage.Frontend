@@ -1,0 +1,21 @@
+
+  <div id="screen" class="fontpack">
+    <mat-toolbar color="primary" dir="rtl">
+        <span>کمک انبار</span>
+        <span class="example-spacer "></span>
+        <button [routerLink]="'/first'" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon >keyboard_arrow_left</mat-icon>
+        </button>
+    </mat-toolbar>
+
+    <div id="content">
+        <div>
+            <mat-icon>report_problem</mat-icon>
+            <p style="font-size: xx-large;">
+                هنوز سفارشی ثبت نکردید‍
+            </p>
+            <a [routerLink]="'/newtask'" class="text-decoration-none">برای ثبت اولین سفارش اینجا را بزنید</a>
+        </div>
+
+    </div>
+</div>

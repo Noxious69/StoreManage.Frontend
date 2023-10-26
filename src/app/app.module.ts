@@ -14,6 +14,14 @@ import { FirstpageComponent } from './pages/firstpage/firstpage.component';
 import { InsertneworderComponent } from './pages/insertneworder/insertneworder.component';
 import { DialogComponent } from './pages/firstpage/dialog/dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { OrderlistComponent } from './pages/orderlist/orderlist.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { NgPersianDatepickerModule } from 'ng-persian-datepicker';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -21,6 +29,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     FirstpageComponent,
     InsertneworderComponent,
     DialogComponent,
+    OrderlistComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,8 +41,16 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatToolbarModule,
     MatIconModule,
     MatInputModule,
-    MatDialogModule
-    
+    MatDialogModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    NgPersianDatepickerModule,
+    ReactiveFormsModule,
+    MatRadioModule,
+    MatCheckboxModule,
+    MatMenuModule,
+    FormsModule
+     
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,11 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
+html, body { min-height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 @font-face {
     font-family: samim;
@@ -23,3 +32,29 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   .fontpack{
     font-family: samim, sans-serif, awesome, rtui -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   }
+  #screen{
+    background-color: rgba(224, 224, 224, 0.514);
+    min-height: 100vh;
+}
+#content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+
+}
+.anime{
+  text-decoration: none;
+   height: 10vh;
+   width: 30vw;
+}
+ .anime button .anime,button:not(.highlight-card):hover  {
+   transform: translateY(-5px);
+
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+   transition: all 0.3s ease-in-out;
+ }
+
+ .fade-in {
+  animation: fadeIn 0.5s;
+}

@@ -1,1 +1,119 @@
-<p>insertneworder works!</p>
+<div id="screen" class="fontpack">
+  <mat-toolbar color="primary" dir="rtl">
+    <span>کمک انبار</span>
+    <span class="example-spacer"></span>
+    <button
+      [routerLink]="'/first'"
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+    >
+      <mat-icon>keyboard_arrow_left</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <div id="content" class="mt-4 contaier">
+    <mat-card class="p-4 rounded-4 card example-card" style="width: 74vw;" dir="rtl">
+      <div class="">
+        <form class="example-form">
+
+          <table class="example-full-width " cellspacing="0">
+            <tr class="row">
+              <td class="col-auto">
+                <mat-form-field class="example-full-width ">
+                  <mat-label>First name</mat-label>
+                  <input matInput />
+                </mat-form-field>
+              </td>
+
+              <td class="col-auto">
+                <mat-form-field class="example-full-width " >
+                    <mat-label class="me-2">Telephone</mat-label>
+                    <span class="me-2" matPrefix>+98</span>
+                    <input type="tel" matInput placeholder="555-555-1234">
+                    <mat-icon matSuffix>phone</mat-icon>
+                  </mat-form-field>
+              </td>
+               <td class="col-auto">
+
+                 <mat-form-field class="example-full-width " style="min-width: 20vw;">
+                   <ng-persian-datepicker class="up">
+                     <input matInput matIconSuffix  [formControl]="dateValue"/>
+                     <mat-datepicker #picker></mat-datepicker>
+                   </ng-persian-datepicker>
+                 </mat-form-field>
+              </td>
+            </tr>
+          </table>
+
+          <table class="example-full-width fontpack" cellspacing="0">
+            <tr class="row fontpack">
+              <td class="col-auto ">
+                <mat-radio-button color="primary" value="1">لبه دار</mat-radio-button>
+              </td>
+
+              <td class="col-auto ">
+                <a class="text-decoration-none" mat-button [matMenuTriggerFor]="type">نوع محصول</a>
+                <mat-menu #type="matMenu">
+                  <a mat-menu-item>Item 2</a>
+                </mat-menu>
+              </td>
+
+              <td class="col-auto ">
+                <a class="text-decoration-none"  mat-button [matMenuTriggerFor]="color">رنگ</a>
+                  <mat-menu #color="matMenu">
+                    <a mat-menu-item class="ms-5 fontpack">
+                      
+                      <svg class="me-3" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-square-fill" viewBox="0 0 16 16">
+                        <path class="me-3" d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2z"/>
+                      </svg><span class="ms-1 d-none d-sm-inline p-2">قرمز</span></a>
+                    <a mat-menu-item>Item 2</a>
+                  </mat-menu>
+              </td>
+
+              <td class="col-auto ">
+                <a class="text-decoration-none"  mat-button [matMenuTriggerFor]="box">کارتن</a>
+                <mat-menu #box="matMenu">
+                  <a mat-menu-item class="ms-5">90 تایی</a>
+                  <a mat-menu-item>6 تایی</a>
+                </mat-menu>
+              </td>
+            </tr>
+          </table>
+
+          <mat-form-field style="width: 70vw" class="example-full-width">
+            <mat-label>SEFAR</mat-label>
+            <input matInput />
+          </mat-form-field>
+
+          
+
+          <mat-form-field
+            style="width: 70vw; height: 30vh"
+            class="example-full-width ">
+            <mat-label>Address </mat-label>
+            <textarea matInput></textarea>
+          </mat-form-field>
+
+
+          <div class="example-button-row text-center">
+            <button
+              [routerLink]="'/first'"
+              mat-raised-button
+              color="warn"
+              class="ms-2"
+            >
+              انصراف
+            </button>
+            <button mat-raised-button color="primary" class="me-2">
+              تایید
+            </button>
+          </div>
+
+          
+        </form>
+      </div>
+    </mat-card>
+  </div>
+</div>
+
