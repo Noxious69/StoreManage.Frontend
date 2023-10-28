@@ -22,6 +22,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatSelectModule} from '@angular/material/select';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+
 
 @NgModule({
   declarations: [
@@ -49,7 +53,10 @@ import {MatMenuModule} from '@angular/material/menu';
     MatRadioModule,
     MatCheckboxModule,
     MatMenuModule,
-    FormsModule
+    FormsModule,
+    MatDividerModule,
+    MatSelectModule,
+    MatAutocompleteModule
      
   ],
   providers: [],

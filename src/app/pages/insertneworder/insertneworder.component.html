@@ -13,88 +13,109 @@
   </mat-toolbar>
 
   <div id="content" class="mt-4 contaier">
-    <mat-card class="p-4 rounded-4 card example-card" style="width: 74vw;" dir="rtl">
+    <mat-card
+      class="p-4 rounded-4 card example-card"
+      style="width: 74vw"
+      dir="rtl"
+    >
       <div class="">
         <form class="example-form">
-
-          <table class="example-full-width " cellspacing="0">
+          <table class="example-full-width" cellspacing="0">
             <tr class="row">
               <td class="col-auto">
-                <mat-form-field class="example-full-width ">
-                  <mat-label>First name</mat-label>
-                  <input matInput />
+                <mat-form-field class="example-full-width">
+                  <mat-label>نام کامل خریدار</mat-label>
+                  <input matInput 
+                  (keypress)="keyWord($event)"
+                  />
                 </mat-form-field>
               </td>
 
               <td class="col-auto">
-                <mat-form-field class="example-full-width " >
-                    <mat-label class="me-2">Telephone</mat-label>
-                    <span class="me-2" matPrefix>+98</span>
-                    <input type="tel" matInput placeholder="555-555-1234">
-                    <mat-icon matSuffix>phone</mat-icon>
-                  </mat-form-field>
+                <mat-form-field class="example-full-width">
+                  <mat-icon matSuffix>phone</mat-icon>
+                  <mat-label class="me-2">شماره تماس</mat-label>
+                  <input 
+                  #phone
+                  matInput 
+                  maxlength="11" 
+                  type="tel" 
+                  (keypress)="keyNumber($event)"/>
+                  <mat-hint dir="rtl">{{phone.value.length}} / 11</mat-hint>
+                </mat-form-field>
               </td>
-               <td class="col-auto">
-
-                 <mat-form-field class="example-full-width " style="min-width: 20vw;">
-                   <ng-persian-datepicker class="up">
-                     <input matInput matIconSuffix  [formControl]="dateValue"/>
-                     <mat-datepicker #picker></mat-datepicker>
-                   </ng-persian-datepicker>
-                 </mat-form-field>
+              <td class="col-auto">
+                <mat-form-field
+                  class="example-full-width"
+                  style="min-width: 25vw"
+                >
+                  <ng-persian-datepicker class=" up">
+                    <input (keypress)="keyNumber($event) " placeholder="انتخاب کنید" matInput matIconSuffix [formControl]="dateValue" />
+                    <mat-datepicker #picker></mat-datepicker>
+                  </ng-persian-datepicker>
+                </mat-form-field>
               </td>
             </tr>
           </table>
+
+          <mat-divider class="m-3"></mat-divider>
 
           <table class="example-full-width fontpack" cellspacing="0">
             <tr class="row fontpack">
-              <td class="col-auto ">
-                <mat-radio-button color="primary" value="1">لبه دار</mat-radio-button>
+              <td class="col-auto">
+                <mat-form-field class="example-full-width">
+                  <mat-label>نوع لیوان</mat-label>
+                  <input matInput placeholder="مثال : ماگ" />
+                </mat-form-field>
               </td>
 
-              <td class="col-auto ">
-                <a class="text-decoration-none" mat-button [matMenuTriggerFor]="type">نوع محصول</a>
-                <mat-menu #type="matMenu">
-                  <a mat-menu-item>Item 2</a>
-                </mat-menu>
+              <td class="col-auto">
+                <mat-form-field class="example-full-width">
+                  <mat-label>رنگ</mat-label>
+                  <input matInput placeholder="مثال : قرمز" />
+                </mat-form-field>
               </td>
 
-              <td class="col-auto ">
-                <a class="text-decoration-none"  mat-button [matMenuTriggerFor]="color">رنگ</a>
-                  <mat-menu #color="matMenu">
-                    <a mat-menu-item class="ms-5 fontpack">
-                      
-                      <svg class="me-3" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-square-fill" viewBox="0 0 16 16">
-                        <path class="me-3" d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2z"/>
-                      </svg><span class="ms-1 d-none d-sm-inline p-2">قرمز</span></a>
-                    <a mat-menu-item>Item 2</a>
-                  </mat-menu>
-              </td>
-
-              <td class="col-auto ">
-                <a class="text-decoration-none"  mat-button [matMenuTriggerFor]="box">کارتن</a>
-                <mat-menu #box="matMenu">
-                  <a mat-menu-item class="ms-5">90 تایی</a>
-                  <a mat-menu-item>6 تایی</a>
-                </mat-menu>
+              <td class="col-auto">
+                <mat-form-field class="example-full-width">
+                  <mat-label>نوع کارتن</mat-label>
+                  <input matInput placeholder="مثال : جعبه 6 تایی" />
+                </mat-form-field>
               </td>
             </tr>
           </table>
 
-          <mat-form-field style="width: 70vw" class="example-full-width">
-            <mat-label>SEFAR</mat-label>
-            <input matInput />
-          </mat-form-field>
+          <mat-divider class="m-3"></mat-divider>
 
-          
+          <table class="example-full-width" cellspacing="0">
+            <tr class="row">
+              <td class="col-auto">
+                <mat-checkbox color="primary" class="example-margin"
+                  >لبه دار</mat-checkbox
+                >
+              </td>
+              <td class="col-auto">
+                <mat-checkbox color="primary" class="example-margin"
+                  >طرح دار</mat-checkbox
+                >
+              </td>
+              <td class="col-auto">
+                <mat-checkbox color="primary" class="example-margin"
+                  >داخل سفید</mat-checkbox
+                >
+              </td>
+            </tr>
+          </table>
+
+          <mat-divider class="m-3"></mat-divider>
 
           <mat-form-field
-            style="width: 70vw; height: 30vh"
-            class="example-full-width ">
-            <mat-label>Address </mat-label>
-            <textarea matInput></textarea>
+            style="width: 70vw; height: 20vh"
+            class="example-full-width"
+          >
+            <mat-label>آدرس</mat-label>
+            <input matInput />
           </mat-form-field>
-
 
           <div class="example-button-row text-center">
             <button
@@ -109,11 +130,8 @@
               تایید
             </button>
           </div>
-
-          
         </form>
       </div>
     </mat-card>
   </div>
 </div>
-
