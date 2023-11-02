@@ -1,3 +1,7 @@
 .up{
     z-index: 50;
 }
+
+.example-full-width {
+    width: 100%;
+  }

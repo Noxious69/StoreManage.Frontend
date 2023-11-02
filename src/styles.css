@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { min-height: 100%; }
+html, body { min-height: 100vh; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 /* You can add global styles to this file, and also import other style files */
 
@@ -43,12 +43,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   min-height: 80vh;
 
 }
+
 .anime{
   text-decoration: none;
    height: 10vh;
    width: 30vw;
 }
- .anime button .anime,button:not(.highlight-card):hover  {
+ .anime  button .anime,button:not(.highlight-card):hover  {
    transform: translateY(-5px);
 
    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);

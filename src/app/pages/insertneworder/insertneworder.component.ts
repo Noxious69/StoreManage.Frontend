@@ -1,33 +1,37 @@
 import { Component, OnInit,  } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable, map, startWith } from 'rxjs';
+import { FormBuilder } from '@angular/forms';
+
 
 @Component({
   selector: 'app-insertneworder',
   templateUrl: './insertneworder.component.html',
   styleUrls: ['./insertneworder.component.css'],
 })
-export class InsertneworderComponent implements OnInit {
+export class InsertneworderComponent  {
   dateValue = new FormControl();
   
-  myControl = new FormControl('');
-  options: string[] = ['فنجون', 'قهوه خوری', 'تک'];
-  color: string[] = ['قرمز', 'آبی', 'زرد'];
-  filteredOptions: Observable<string[]> | undefined;
-  filteredColor: Observable<string[]> | undefined;
+  constructor(private fb: FormBuilder) { }
 
-  ngOnInit() {
-    this.filteredOptions = this.myControl.valueChanges.pipe(
-      startWith(''),
-      map(value => this._filter()),
-    );
 
+  order = this.fb.group({
+    ordertype: [''],
+    ordercolor: [''],
+    ordercount: [''],
+    boxtype: [''],
+    boxcount: [''],
+    edge: [false],
+    lable: [false],
+    twocolor: [false],
+    customername: [''],
+    customeraddress: [''],
+    customerphone: [''],
+    date: [this.dateValue],
     
-  }
+  });
 
-  private _filter(): string[] {
-    return this.options || this.color  
-  }
+
 
   keyNumber(event : KeyboardEvent){
     const pattern = /[0-9]/;
@@ -37,11 +41,8 @@ export class InsertneworderComponent implements OnInit {
     }
   }
   
-  keyWord(event:KeyboardEvent){
-    const letter = /[^a-zA-Zآ-ی]/g
-    const inputChar = String.fromCharCode(event.charCode);
-    if (letter.test(inputChar)){
-      event.preventDefault();
-    }
   }
-}
+
+  
+
+  
