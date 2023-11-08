@@ -1,11 +1,10 @@
 <div id="screen" class="fontpack">
   <mat-toolbar color="primary" dir="rtl">
     <span>کمک انبار</span>
-    <span class="example-spacer"></span>
+    <span class=""></span>
     <button
       [routerLink]="'/first'"
       mat-icon-button
-      class="example-icon"
       aria-label="Example icon-button with menu icon"
     >
       <mat-icon>keyboard_arrow_left</mat-icon>
@@ -13,43 +12,43 @@
   </mat-toolbar>
 
   <div id="content" class="mt-4 contaier">
-    <mat-card
-      class="p-4 rounded-4 card "
-      style="width: 75vw"
-      dir="rtl"
-    >
+    <mat-card class="p-4 rounded-4 card w-75" dir="rtl">
       <div class="">
         <form [formGroup]="order" class="example-form">
-
           <table class="example-full-width" cellspacing="0">
             <tr class="row">
               <td class="col-auto">
                 <mat-form-field class="example-full-width">
                   <mat-label>نام کامل خریدار</mat-label>
-                  <input formControlName="customername" matInput/>
+                  <input formControlName="customername" matInput />
                 </mat-form-field>
               </td>
 
               <td class="col-auto">
                 <mat-form-field class="example-full-width">
-                  <mat-icon matSuffix >phone</mat-icon>
+                  <mat-icon matSuffix>phone</mat-icon>
                   <mat-label class="">شماره تماس</mat-label>
-                  <input 
-                  formControlName="customerphone"
-                  #phone
-                  matInput 
-                  maxlength="11" 
-                  type="tel" 
-                  (keypress)="keyNumber($event)"/>
-                  <mat-hint dir="rtl">{{phone.value.length}} / 11</mat-hint>
+                  <input
+                    formControlName="customerphone"
+                    #phone
+                    matInput
+                    maxlength="11"
+                    type="tel"
+                    (keypress)="keyNumber($event)"
+                  />
+                  <mat-hint dir="rtl">{{ phone.value.length }} / 11</mat-hint>
                 </mat-form-field>
               </td>
 
               <td class="col-auto">
-                <mat-form-field
-                  class="example-full-width">
-                  <ng-persian-datepicker class=" up">
-                    <input formControlName="date" placeholder="انتخاب کنید" matInput matIconSuffix [formControl]="dateValue"/>
+                <mat-form-field >
+                  <ng-persian-datepicker class="example-full-width">
+                    <input
+                      formControlName="date"
+                      placeholder="انتخاب کنید"
+                      matInput
+                      matIconSuffix
+                      [formControl]="dateValue"/>
                     <mat-datepicker #picker></mat-datepicker>
                   </ng-persian-datepicker>
                 </mat-form-field>
@@ -64,34 +63,58 @@
               <td class="col-auto">
                 <mat-form-field class="example-full-width">
                   <mat-label>نوع جنس</mat-label>
-                  <input formControlName="ordertype" matInput placeholder="مثال : ماگ" />
+                  <input
+                    formControlName="ordertype"
+                    matInput
+                    placeholder="مثال : ماگ"
+                  />
                 </mat-form-field>
               </td>
               <td class="col-auto">
                 <mat-form-field class="example-full-width">
                   <mat-label>تعداد جنس</mat-label>
-                  <input formControlName="ordercount" matInput placeholder="مثال : 90 عدد" />
+                  <input
+                    type="tel"
+                    formControlName="ordercount"
+                    matInput
+                    placeholder="مثال : 90 عدد"
+                    (keypress)="keyNumber($event)"
+                  />
                 </mat-form-field>
               </td>
 
               <td class="col-auto">
                 <mat-form-field class="example-full-width">
                   <mat-label>رنگ</mat-label>
-                  <input formControlName="ordercolor" matInput placeholder="مثال : قرمز" />
+                  <input
+                    formControlName="ordercolor"
+                    matInput
+                    placeholder="مثال : قرمز"
+                  />
                 </mat-form-field>
               </td>
 
               <td class="col-auto">
                 <mat-form-field class="example-full-width">
                   <mat-label>نوع کارتن</mat-label>
-                  <input formControlName="boxtype" matInput placeholder="مثال : جعبه 6 تایی" />
+                  <input
+                    formControlName="boxtype"
+                    matInput
+                    placeholder="مثال : جعبه 6 تایی"
+                  />
                 </mat-form-field>
               </td>
 
               <td class="col-auto">
                 <mat-form-field class="example-full-width">
                   <mat-label>تعداد کارتن</mat-label>
-                  <input formControlName="boxcount" matInput placeholder="مثال :2 کارتن" />
+                  <input
+                    type="tel"
+                    (keypress)="keyNumber($event)"
+                    formControlName="boxcount"
+                    matInput
+                    placeholder="مثال :2 کارتن"
+                  />
                 </mat-form-field>
               </td>
             </tr>
@@ -102,16 +125,26 @@
           <table class="example-full-width" cellspacing="0">
             <tr class="row">
               <td class="col-auto">
-                <mat-checkbox formControlName="edge" color="primary" class="example-margin"
-                  >لبه دار</mat-checkbox>
+                <mat-checkbox
+                  formControlName="edge"
+                  color="primary"
+                  class="example-margin"
+                  >لبه دار</mat-checkbox
+                >
               </td>
               <td class="col-auto">
-                <mat-checkbox formControlName="lable" color="primary" class="example-margin"
+                <mat-checkbox
+                  formControlName="lable"
+                  color="primary"
+                  class="example-margin"
                   >طرح دار</mat-checkbox
                 >
               </td>
               <td class="col-auto">
-                <mat-checkbox formControlName="twocolor" color="primary" class="example-margin"
+                <mat-checkbox
+                  formControlName="twocolor"
+                  color="primary"
+                  class="example-margin"
                   >داخل سفید</mat-checkbox
                 >
               </td>
@@ -124,16 +157,19 @@
             <tr class="row">
               <td class="col-auto">
                 <mat-form-field
-            style=" height: 25vh ; width: 200%;"
-            class="w-auto mw-100 mh-30"
-          >
-            <mat-label>آدرس</mat-label>
-            <textarea formControlName="customeraddress" matInput></textarea>
-          </mat-form-field>
+                  style="height: 25vh; width: 200%"
+                  class="w-auto mw-100 mh-30"
+                >
+                  <mat-label>آدرس</mat-label>
+                  <textarea
+                    formControlName="customeraddress"
+                    matInput
+                  ></textarea>
+                </mat-form-field>
               </td>
             </tr>
           </table>
-          
+
           <div class="example-button-row text-center">
             <button
               [routerLink]="'/first'"

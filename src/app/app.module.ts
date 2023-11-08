@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatRippleModule } from '@angular/material/core';
@@ -25,41 +27,43 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatSelectModule} from '@angular/material/select';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { OrdersComponent } from "./pages/orderlist/shared/orders/orders.component";
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    FirstpageComponent,
-    InsertneworderComponent,
-    DialogComponent,
-    OrderlistComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatRippleModule,
-    MatCardModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatInputModule,
-    MatDialogModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    NgPersianDatepickerModule,
-    ReactiveFormsModule,
-    MatRadioModule,
-    MatCheckboxModule,
-    MatMenuModule,
-    FormsModule,
-    MatDividerModule,
-    MatSelectModule,
-    MatAutocompleteModule
-     
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        FirstpageComponent,
+        InsertneworderComponent,
+        DialogComponent,
+        OrderlistComponent,
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatButtonModule,
+        MatRippleModule,
+        MatCardModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatInputModule,
+        MatDialogModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        NgPersianDatepickerModule,
+        ReactiveFormsModule,
+        MatRadioModule,
+        MatCheckboxModule,
+        MatMenuModule,
+        FormsModule,
+        MatDividerModule,
+        MatSelectModule,
+        MatAutocompleteModule,
+        HttpClientModule,
+        OrdersComponent
+    ]
 })
 export class AppModule { }
