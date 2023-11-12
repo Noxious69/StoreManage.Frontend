@@ -19,7 +19,6 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { OrderlistComponent } from './pages/orderlist/orderlist.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import { NgPersianDatepickerModule } from 'ng-persian-datepicker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
@@ -53,7 +52,6 @@ import { OrdersComponent } from "./pages/orderlist/shared/orders/orders.componen
         MatDialogModule,
         MatDatepickerModule,
         MatNativeDateModule,
-        NgPersianDatepickerModule,
         ReactiveFormsModule,
         MatRadioModule,
         MatCheckboxModule,
