@@ -7,7 +7,7 @@ import { BackendService } from './backend.service';
 export class BackendneworderService extends BackendService{
 
   newOrder(ordertype:string , ordercolor:string , ordercount:number , boxcount:number , boxtype : string , customername :string , customerphone :string , customeraddress : string , edge : boolean , twocolor : boolean , lable : boolean ){
-    return this.http.post(this.securityAPI + 'newOrder' , 
+    return this.http.post(this.securityAPI + 'neworder' , 
     {
       ordertype : ordertype ,
       ordercolor : ordercolor,

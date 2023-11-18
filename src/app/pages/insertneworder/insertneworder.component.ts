@@ -18,12 +18,12 @@ export class InsertneworderComponent {
   order = this.fb.group({
     ordertype: [''],
     ordercolor: [''],
-    ordercount: [0],
+    ordercount: [''],
     boxtype: [''],
-    boxcount: [0],
-    edge: [false],
-    lable: [false],
-    twocolor: [false],
+    boxcount: [''],
+    edge: [''],
+    lable: [''],
+    twocolor: [''],
     customername: [''],
     customeraddress: [''],
     customerphone: [''],
@@ -32,6 +32,7 @@ export class InsertneworderComponent {
 
 public import(){
 
+  // console.log(this.order);
   let ordertype : string | undefined = this.order.controls.ordertype.value?.toString();
   let ordercolor : string | undefined = this.order.controls.ordercolor.value?.toString();
   let ordercount : number | undefined = Number(this.order.controls.ordercount.value?.toString());
@@ -47,9 +48,9 @@ public import(){
   let twocolor : boolean | undefined = Boolean(this.order.controls.twocolor.value?.toString());
   let lable : boolean | undefined = Boolean(this.order.controls.lable.value?.toString());
 
-  this.backend.newOrder(ordertype??'' , ordercolor??'', ordercount??0 , boxcount??0 , boxtype??'' , customername??'' , customerphone??'' , customeraddress??'' , edge??false , twocolor??false , lable??false ).subscribe(r=>
+  this.backend.newOrder(ordertype??'' , ordercolor??'', ordercount??'' , boxcount??'' , boxtype??'' , customername??'' , customerphone??'' , customeraddress??'' , edge??false , twocolor??false , lable??false ).subscribe(r=>
     { 
-      this.router.navigate(['/newtask'])
+      this.router.navigate(['/list'])
     });
 }
   
