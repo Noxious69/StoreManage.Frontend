@@ -8,5 +8,5 @@ export class BackendService {
 
   constructor(public http:HttpClient) { }
 
-  securityAPI='https://localhost:7255/'
+  inventoriAPI='https://localhost:7255/'
 }

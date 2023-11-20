@@ -27,7 +27,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatSelectModule} from '@angular/material/select';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { OrdersComponent } from "./pages/orderlist/shared/orders/orders.component";
-
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
     declarations: [
@@ -61,7 +61,8 @@ import { OrdersComponent } from "./pages/orderlist/shared/orders/orders.componen
         MatSelectModule,
         MatAutocompleteModule,
         HttpClientModule,
-        OrdersComponent
+        OrdersComponent,
+        MatExpansionModule
     ]
 })
 export class AppModule { }

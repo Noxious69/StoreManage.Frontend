@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-  <div id="screen" class="fontpack">
+  <div  id="screen" class="fontpack">
     <div>
 
         <mat-toolbar color="primary" dir="rtl">
@@ -10,7 +10,7 @@
             </button>
         </mat-toolbar>
         
-        <div id="content">
+        <div *ngIf="this.manage.show" id="content">
             <div>
                 <mat-icon>report_problem</mat-icon>
                 <p style="font-size: xx-large;">
@@ -20,5 +20,10 @@
             </div>
         </div>
     </div>
-    <app-orders ></app-orders>
+    <app-orders 
+        
+        *ngIf="!this.manage.show"
+        datasource="https://localhost:7255/list"
+        >
+    </app-orders>
 </div>
