@@ -3,3 +3,12 @@
     justify-content: center;
     min-height: 80vh
 }
+.accardeon{
+    display: grid;
+    grid-template-columns: auto auto auto ;
+   
+    color: rgb(147, 147, 147);
+}
+.call{
+    color: rgb(32, 32, 32);
+}

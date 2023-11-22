@@ -3,11 +3,14 @@ import { CommonModule } from '@angular/common';
 import { OrderManage } from 'src/app/pages/Entities/OrderManage';
 import { HttpClient, HttpClientJsonpModule } from '@angular/common/http';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { orderGridColumn } from './orderGridColumn';
+import {MatDividerModule} from '@angular/material/divider';
+
 
 @Component({
   selector: 'app-orders',
   standalone: true,
-  imports: [CommonModule , HttpClientJsonpModule , MatExpansionModule],
+  imports: [MatDividerModule ,CommonModule , HttpClientJsonpModule , MatExpansionModule],
   templateUrl: './orders.component.html',
   styleUrls: ['./orders.component.css']
 })
@@ -24,4 +27,5 @@ export class OrdersComponent implements OnInit{
     })
   }
 @Input() datasource:string = '';
+@Input() columns: orderGridColumn[] = [];
 }

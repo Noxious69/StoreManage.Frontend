@@ -23,7 +23,8 @@
     <app-orders 
         
         *ngIf="!this.manage.show"
-        datasource="https://localhost:7255/list"
+        [datasource]="'https://localhost:7255/list'"
+        [columns]="[]"
         >
     </app-orders>
 </div>
