@@ -25,10 +25,14 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/scss/bootstrap.scss",
               "src/custom-theme.scss",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/js/index.umd.js",
+              "node_modules/bootstrap/js/index.esm.js"
+            ]
           },
           "configurations": {
             "production": {
