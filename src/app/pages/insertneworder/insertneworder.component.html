@@ -164,8 +164,8 @@
               </td>
             </tr>
           </table>
-
-          <div class="example-button-row text-center">
+          
+          <div *ngIf="busy == false" class="example-button-row text-center">
             <button
               [routerLink]="'/first'"
               mat-raised-button
@@ -178,6 +178,7 @@
               تایید
             </button>
           </div>
+          <mat-progress-bar *ngIf="busy" mode="indeterminate"></mat-progress-bar>
         </form>
       </div>
     </mat-card>

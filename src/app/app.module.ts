@@ -28,6 +28,8 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { OrdersComponent } from "./pages/orderlist/shared/orders/orders.component";
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { EmptylistComponent } from './pages/orderlist/shared/orders/emptylist/emptylist/emptylist.component';
 
 @NgModule({
     declarations: [
@@ -36,6 +38,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
         InsertneworderComponent,
         DialogComponent,
         OrderlistComponent,
+        EmptylistComponent,
     ],
     providers: [],
     bootstrap: [AppComponent],
@@ -57,12 +60,14 @@ import {MatExpansionModule} from '@angular/material/expansion';
         MatCheckboxModule,
         MatMenuModule,
         FormsModule,
+        ReactiveFormsModule,
         MatDividerModule,
         MatSelectModule,
         MatAutocompleteModule,
         HttpClientModule,
         OrdersComponent,
-        MatExpansionModule
+        MatExpansionModule,
+        MatProgressBarModule,
     ]
 })
 export class AppModule { }

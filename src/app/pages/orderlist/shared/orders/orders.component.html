@@ -1,44 +1,49 @@
 <!DOCTYPE html>
 
-
-
-
-<table style="width:90%" class="container fontpack">
-    <tr class="row ">
+<div class="table-responsive">
+  <table style="width: 90% " class="table table-hover text-center container-fluid table fontpack">
+    <thead *ngIf="manage?.empty === false" class="table-primary">
+      <tr>
+        <th scope="col" *ngFor="let item of columns">{{ item.title }}</th>
+        <th >#</th>
+      </tr>
       
-      <td class="pt-2">
-        <mat-accordion>
-          <mat-expansion-panel
-            (opened)="panelOpenState = true"
-            (closed)="panelOpenState = false">
-            <mat-expansion-panel-header>
-              <mat-panel-title *ngFor="let item of data">{{item.title}}</mat-panel-title>
-              <mat-panel-description>
-               tariikh mola
-              </mat-panel-description>
-            </mat-expansion-panel-header>
-            <mat-divider class="mb-2"></mat-divider>
-            <div class="accardeon">
-              <p class="call">shomare</p>
-              <p>box count</p>
-              <p> do rang</p>
-              <p>rang mah</p>
-              <p>box type</p>
-              <p>tedad mah</p>
-              <p>lable</p>
-              <p>TARH</p>
-              <p>noee mah</p>
-              <p class="pb-4">addres</p>
-            </div>
-          </mat-expansion-panel>
-        </mat-accordion>
-      </td>
+    </thead>
 
-    
+    <tbody>
+      <tr
+        *ngFor="let item of data"
+      >
+        <td *ngFor="let col of columns">
+          <ng-container [ngSwitch]="col.type">
+            <ng-container *ngSwitchCase="'text'">
 
-      
+              {{item[col.field]}}</ng-container>
+            <ng-container *ngSwitchCase="'check'">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                disabled
+                [checked]="item[col.field]"
+              />
+            </ng-container>
 
-    </tr>
+            <ng-container *ngSwitchDefault>{{ item[col.field] }}</ng-container>
+          </ng-container>
+        </td>
 
+        <td >
+          <a (click)="onEdit.emit(item)" class="btn-sm btn btn-primary ms-2 mb-2 text-center col-auto">
+            <mat-icon class="text-center">edit</mat-icon>
+          </a>
+          <a (click)="onDelete.emit(item)" class=" btn btn-danger ms-2 mb-2 col-auto">
+            <mat-icon class="text-center">delete</mat-icon>
+          </a>
+        </td>
+        
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-</table>
+<!-- !!!!! table 2 end !!!!! -->

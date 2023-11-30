@@ -14,7 +14,7 @@ import { OrderManage } from '../Entities/OrderManage';
 export class InsertneworderComponent {
   dateValue = new FormControl();
   manage : OrderManage = new OrderManage
-  
+  busy:boolean = false;
   constructor(private fb: FormBuilder , private backend:BackendneworderService , private router:Router) {}
 
   order = this.fb.group({
@@ -33,7 +33,7 @@ export class InsertneworderComponent {
   });
 
 public import(){
-
+  this.busy = true;
   let ordertype : string | undefined = this.order.controls.ordertype.value?.toString();
   let ordercolor : string | undefined = this.order.controls.ordercolor.value?.toString();
   let ordercount : number | undefined = Number(this.order.controls.ordercount.value?.toString());
@@ -51,16 +51,8 @@ public import(){
 
   this.backend.newOrder(ordertype??'' , ordercolor??'', ordercount??'' , boxcount??'' , boxtype??'' , customername??'' , customerphone??'' , customeraddress??'' , edge??false , twocolor??false , lable??false ).subscribe(r=>
     { 
+      this.busy = false;
       let result = r as any;
-
-      if (result.isOk == false) {
-        this.manage.show = false;
-        
-      }else{
-
-        this.manage.show = true;
-        this.router.navigate(['/list']);
-      }
     });
 }
   

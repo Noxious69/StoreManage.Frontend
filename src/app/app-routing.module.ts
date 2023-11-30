@@ -9,7 +9,8 @@ const routes: Routes = [
   {path: 'first' , component:FirstpageComponent},
   {path: 'newtask' , component:InsertneworderComponent},
   {path: 'list' , component:OrderlistComponent , children:[
-    {path: 'order' , component :OrdersComponent}
+    {path: 'order' , component :OrdersComponent},
+    
   ]},
   {path: '' , redirectTo : '/first', pathMatch:'full'},
   {path: '**' , redirectTo : '/first'}

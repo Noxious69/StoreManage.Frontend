@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-  <div  id="screen" class="fontpack">
+  <div id="screen" class="fontpack">
     <div>
 
         <mat-toolbar color="primary" dir="rtl">
@@ -9,22 +9,19 @@
                 <mat-icon >keyboard_arrow_left</mat-icon>
             </button>
         </mat-toolbar>
-        
-        <div *ngIf="this.manage.show" id="content">
-            <div>
-                <mat-icon>report_problem</mat-icon>
-                <p style="font-size: xx-large;">
-                    هنوز سفارشی ثبت نکردید‍
-                </p>
-                <a [routerLink]="'/newtask'" class="text-decoration-none">برای ثبت اولین سفارش اینجا را بزنید</a>
-            </div>
-        </div>
+            
+               <app-emptylist
+                *ngIf="manage.empty"
+                >
+                </app-emptylist>
     </div>
-    <app-orders 
         
-        *ngIf="!this.manage.show"
-        [datasource]="'https://localhost:7255/list'"
-        [columns]="[]"
-        >
-    </app-orders>
+            <app-orders 
+                *ngIf="!manage.empty"
+                [datasource]="'https://localhost:7255/lists'"
+                [columns]="columns"
+                (onEdit)="edit($event)"
+                (onDelete)="remove($event)"
+                >
+            </app-orders>
 </div>
