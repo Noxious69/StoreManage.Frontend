@@ -29,7 +29,6 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { OrdersComponent } from "./pages/orderlist/shared/orders/orders.component";
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
-import { EmptylistComponent } from './pages/orderlist/shared/orders/emptylist/emptylist/emptylist.component';
 
 @NgModule({
     declarations: [
@@ -38,7 +37,7 @@ import { EmptylistComponent } from './pages/orderlist/shared/orders/emptylist/em
         InsertneworderComponent,
         DialogComponent,
         OrderlistComponent,
-        EmptylistComponent,
+        
     ],
     providers: [],
     bootstrap: [AppComponent],

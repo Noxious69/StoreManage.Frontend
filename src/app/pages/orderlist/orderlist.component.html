@@ -10,10 +10,15 @@
             </button>
         </mat-toolbar>
             
-               <app-emptylist
-                *ngIf="manage.empty"
-                >
-                </app-emptylist>
+        <div *ngIf="manage.empty" id="content"> 
+            <div>
+                <mat-icon>report_problem</mat-icon>
+                <p style="font-size: xx-large;">
+                    هنوز سفارشی ثبت نکردید‍
+                </p>
+                <a [routerLink]="'/newtask'" class="text-decoration-none">برای ثبت اولین سفارش اینجا را بزنید</a>
+            </div>
+        </div>
     </div>
         
             <app-orders 
