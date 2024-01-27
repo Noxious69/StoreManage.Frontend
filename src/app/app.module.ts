@@ -67,6 +67,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
         OrdersComponent,
         MatExpansionModule,
         MatProgressBarModule,
+        
     ]
 })
 export class AppModule { }

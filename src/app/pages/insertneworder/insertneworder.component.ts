@@ -5,6 +5,7 @@ import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BackendneworderService } from '../services/backendneworder.service';
 import { OrderManage } from '../Entities/OrderManage';
+import * as moment from 'jalali-moment';
 
 @Component({
   selector: 'app-insertneworder',
@@ -12,10 +13,24 @@ import { OrderManage } from '../Entities/OrderManage';
   styleUrls: ['./insertneworder.component.css'],
 })
 export class InsertneworderComponent {
+  selectedDate: Date | undefined;
+
+  convertedDate: string | undefined;
+
+
   dateValue = new FormControl();
   manage : OrderManage = new OrderManage
   busy:boolean = false;
-  constructor(private fb: FormBuilder , private backend:BackendneworderService , private router:Router) {}
+  
+  convertToJalali(gregorianDate: string) {
+    const jalaliDate = moment(gregorianDate, 'YYYY-MM-DD').format('jYYYY/jMM/jDD');
+    return jalaliDate;
+  }
+  
+  
+  constructor(private fb: FormBuilder , private backend:BackendneworderService , private router:Router) {
+      
+  }
 
   order = this.fb.group({
     ordertype: [''],

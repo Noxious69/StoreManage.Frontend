@@ -42,12 +42,13 @@
                 </mat-form-field>
               </td>
 
-              <!-- <td class="col-auto">
+              <td class="col-auto">
                 <mat-form-field >
-                 
-
+                    <input matInput [matDatepicker]="picker" placeholder="تاریخ">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
-              </td> -->
+              </td>
             </tr>
           </table>
 
