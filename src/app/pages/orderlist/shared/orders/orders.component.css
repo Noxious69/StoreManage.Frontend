@@ -18,8 +18,12 @@ body{
 	background-color:#34495e;
 }
 
-
+.form-check-input{
+    width: 30px;
+    height: 30px;
+}
 
 .hiddenRow {
     padding: 0 !important;
 }
+

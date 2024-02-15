@@ -11,6 +11,11 @@ export class OrderlistComponent {
 constructor() {}
    manage : OrderManage = new OrderManage
    columns : orderGridColumn[] = [
+     {
+       field:'date',
+       title:'تاریخ ',
+       type:'text'
+     },
     {
       field:'customerName',
       title:'نام ',

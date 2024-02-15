@@ -43,11 +43,23 @@
               </td>
 
               <td class="col-auto">
-                <mat-form-field >
-                    <input matInput [matDatepicker]="picker" placeholder="تاریخ">
-                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                    <mat-datepicker #picker></mat-datepicker>
+                
+                <mat-form-field appearance="fill">
+                  <mat-label>تاریخ</mat-label>
+                  <input
+                    matInput
+                    [matDatepicker]="picker"
+                    [value]="locale"
+                    (dateChange)="changeDate($event.value)"
+                  />
+                  <mat-datepicker-toggle
+                    (click)="changeLocale('fa-IR')"
+                    matSuffix
+                    [for]="picker"
+                  ></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
+              
               </td>
             </tr>
           </table>
@@ -113,6 +125,9 @@
                   />
                 </mat-form-field>
               </td>
+
+              <td></td>
+
             </tr>
           </table>
 

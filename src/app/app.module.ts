@@ -29,6 +29,9 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { OrdersComponent } from "./pages/orderlist/shared/orders/orders.component";
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { NgxMatDateFnsModule }  from 'ngx-material-date-fns-adapter';
+import { MAT_DATE_LOCALE } from "@angular/material/core";
+import { fr } from 'date-fns/esm/locale';
 
 @NgModule({
     declarations: [
@@ -39,7 +42,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
         OrderlistComponent,
         
     ],
-    providers: [],
+    providers: [{ provide: MAT_DATE_LOCALE, useValue: fr }],
     bootstrap: [AppComponent],
     imports: [
         BrowserModule,
@@ -67,7 +70,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
         OrdersComponent,
         MatExpansionModule,
         MatProgressBarModule,
-        
+        NgxMatDateFnsModule
     ]
 })
 export class AppModule { }

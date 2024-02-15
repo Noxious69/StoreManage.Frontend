@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { DateAdapter, MAT_DATE_LOCALE } from '@angular/material/core';
+import { enUS, faIR } from 'date-fns/esm/locale';
 import { FormControl } from '@angular/forms';
 import { Observable, map, startWith } from 'rxjs';
 import { FormBuilder } from '@angular/forms';
@@ -13,25 +15,40 @@ import * as moment from 'jalali-moment';
   styleUrls: ['./insertneworder.component.css'],
 })
 export class InsertneworderComponent {
-  selectedDate: Date | undefined;
-
-  convertedDate: string | undefined;
-
-
-  dateValue = new FormControl();
+  //dateValue = new FormControl(); //date to go in DB
   manage : OrderManage = new OrderManage
   busy:boolean = false;
-  
-  convertToJalali(gregorianDate: string) {
-    const jalaliDate = moment(gregorianDate, 'YYYY-MM-DD').format('jYYYY/jMM/jDD');
-    return jalaliDate;
-  }
-  
-  
-  constructor(private fb: FormBuilder , private backend:BackendneworderService , private router:Router) {
-      
-  }
 
+  constructor(private fb: FormBuilder,
+    private backend:BackendneworderService,
+    private router:Router , private _adapter: DateAdapter<any>,
+    @Inject(MAT_DATE_LOCALE) public locale: any
+    ) {}
+
+  changeLocale(value: any): void {
+    switch (value) {
+      case 'fa-IR':
+        this._adapter.setLocale(faIR);
+        break;
+    }
+
+  }
+ 
+
+  changeDate(value: Date) {
+    const locale =
+      typeof this.locale === 'string' ? this.locale : this.locale?.code;
+
+    console.log(
+      `Change:
+      Date: ${value}
+      ISO : ${value?.toISOString()}
+      Local(${locale}): ${value.toLocaleString(locale)}`
+    );
+
+    
+  }
+  
   order = this.fb.group({
     ordertype: [''],
     ordercolor: [''],
@@ -44,7 +61,7 @@ export class InsertneworderComponent {
     customername: [''],
     customeraddress: [''],
     customerphone: [''],
-    date: [this.dateValue],
+    date: [''],
   });
 
 public import(){
@@ -64,7 +81,9 @@ public import(){
   let twocolor : boolean | undefined = Boolean(this.order.controls.twocolor.value?.toString());
   let lable : boolean | undefined = Boolean(this.order.controls.lable.value?.toString());
 
-  this.backend.newOrder(ordertype??'' , ordercolor??'', ordercount??'' , boxcount??'' , boxtype??'' , customername??'' , customerphone??'' , customeraddress??'' , edge??false , twocolor??false , lable??false ).subscribe(r=>
+  let date : string | undefined  = this.order.controls.date.value?.toString()
+
+  this.backend.newOrder(ordertype??'' , ordercolor??'', ordercount??'' , boxcount??'', date??'' , boxtype??'' , customername??'' , customerphone??'' , customeraddress??'' , edge??false , twocolor??false , lable??false ).subscribe(r=>
     { 
       this.busy = false;
       let result = r as any;
